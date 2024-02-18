@@ -4,11 +4,32 @@ import Categories from '../All/page';
 import Mail from '../mails/Mail';
 import MegaMenu from '../MegaMenu/MegaMenu';
 import Setting from '../settingHeader/page';
+import { RiArrowDropDownLine } from "react-icons/ri";
+import Inbox from '../Inbox/page';
 
 
 const Sidebar = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [selectedDropdown, setSelectedDropdown] = useState(null);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isDropdownOpened, setIsDropdownOpened] = useState(false);
+    const [isDropdownOpene, setIsDropdownOpene] = useState(false);
+    const [isFormOpen, setIsFormOpen] = useState(false);
+
+
+
+
+    const toggleeeDropdown = () => {
+        setIsDropdownOpene(!isDropdownOpene);
+      };
+
+    const toggleeDropdown = () => {
+        setIsDropdownOpened(!isDropdownOpened);
+      };
+    
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
@@ -85,10 +106,42 @@ const Sidebar = () => {
 
                         <p className='text-[#146EF6]'>anna@quomeda.com</p>
                     </div>
-                    <select name="" id="" className='border-2 px-6 py-1 rounded outline-none'>
-                        <option value="">Email</option>
-                        <option value="">Campaign</option>
-                    </select>
+                   
+
+                                    
+                    <div className='border-2 w-36 p-1'> 
+      <span className='flex'>
+      New Message <div className='ml-2 mt-1 border-l'><RiArrowDropDownLine onClick={toggleeeDropdown} style={{ cursor: 'pointer' }}  className='w-4 h-4' /></div>
+      </span>
+
+      {isDropdownOpene && (
+       <div className='flex flex-col'>
+       <div className='flex items-center space-x-2'>
+         <div>
+           <img src="/group.png" className='w-3 h-3' alt="" />
+         </div>
+         <div>
+           <a href="/Inbox">
+           <h2>Email</h2>
+           </a>
+         </div>
+       </div>
+     
+       <div className='flex items-center space-x-2'>
+         <div>
+           <img src="/group2.png" className='w-3 h-3' alt="" />
+         </div>
+         <div>
+          <a href="/Batch">
+          <h2>Campaign</h2>
+          </a>
+         </div>
+       </div>
+     </div>
+     
+        
+      )}
+    </div>
 
                     <ul className="space-y-2 font-medium">
                         {mailOptions.map((option, index) => (
@@ -123,65 +176,84 @@ const Sidebar = () => {
                     </ul>
 
                     <ul className="pt-4 mt-4 space-y-2 font-medium border-t border-gray-200 dark:border-gray-700">
-                        <div>
-                            <label htmlFor="liveProjectsDropdown" className="block text-sm font-medium text-gray-700 dark:text-gray-400">
-                                Live Projects
-                            </label>
-                            <select
-                                id="liveProjectsDropdown"
-                                name="liveProjectsDropdown"
-                                className="mt-1 block w-full p-2 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                            >
-                                <option value="volvo">
-                                    <img src="/live.png" alt="" className="" />
-                                    Q0523
-                                </option>
-                                <option value="saab">
-                                   
-                                    Q0523
-                                </option>
-                                <option value="mercedes">
-                                   
-                                    Q0523
-                                </option>
-                                <option value="audi">
-                                   
-                                    Q0523
-                                </option>
-                            </select>
-                        </div>
-                    </ul>
+                       
+
+
+
+                    <div>
+      <span className='flex'>
+        Live Projects <div className='ml-auto'><RiArrowDropDownLine onClick={toggleDropdown} style={{ cursor: 'pointer' }}  className='w-4 h-4' /></div>
+      </span>
+
+      {isDropdownOpen && (
+        <div className='flex flex-col'>
+          <div className='flex items-center space-x-2'>
+            <div className=''>
+              <img src="/circle.png" className='w-3 h-3' alt="" />
+            </div>
+            <div className=''>
+              <h2>Q0523</h2>
+            </div>
+          </div>
+
+          <div className='flex items-center space-x-2'>
+            <div className=''>
+              <img src="/circle.png" className='w-3 h-3' alt="" />
+            </div>
+            <div className=''>
+              <h2>Q0523</h2>
+            </div>
+          </div>
+
+          <div className='flex items-center space-x-2'>
+            <div className=''>
+              <img src="/circle.png" className='w-3 h-3' alt="" />
+            </div>
+            <div className=''>
+              <h2>Q0523</h2>
+            </div>
+          </div>
+
+          <div className='flex items-center space-x-2'>
+            <div className=''>
+              <img src="/circle.png" className='w-3 h-3' alt="" />
+            </div>
+            <div className=''>
+              <h2>Q0523</h2>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+ </ul>
 
 
 
                     <ul className="pt-4 mt-4 space-y-2 font-medium border-t border-gray-200 dark:border-gray-700">
-                        <div>
-                            <label htmlFor="liveProjectsDropdown" className="block text-sm font-medium text-gray-700 dark:text-gray-400">
-                                Live Deals
-                            </label>
-                            <select
-                                id="liveProjectsDropdown"
-                                name="liveProjectsDropdown"
-                                className="mt-1 block w-full p-2 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                            >
-                                <option value="volvo">
-                                   
-                                    Q0523
-                                </option>
-                                <option value="saab">
-                                   
-                                    Q0523
-                                </option>
-                                <option value="mercedes">
-                                   
-                                    Q0523
-                                </option>
-                                <option value="audi">
-                                    
-                                    Q0523
-                                </option>
-                            </select>
-                        </div>
+
+
+
+                       
+                    <div>
+      <span className='flex'>
+      Live Deals <div className='ml-auto'><RiArrowDropDownLine onClick={toggleeDropdown} style={{ cursor: 'pointer' }}  className='w-4 h-4' /></div>
+      </span>
+
+      {isDropdownOpened && (
+        <div className='flex flex-col'>
+          <div className='flex items-center space-x-2'>
+            <div className=''>
+              <img src="/circle.png" className='w-3 h-3' alt="" />
+            </div>
+            <div className=''>
+              <h2>Q0523</h2>
+            </div>
+          </div>
+
+        </div>
+      )}
+    </div>
+
                     </ul>
 
 

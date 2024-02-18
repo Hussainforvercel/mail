@@ -1,15 +1,14 @@
 "use client"
 import React, { useState, useEffect, useRef } from 'react';
 import Setting from '../settingHeader/page';
-import Form from './form';
-import Headings from './headings';
-import MailFiled from './mailfield';
+import EmailAccounts from './field';
+
 
 const settings = [
   { label: 'Setting', href: '/setting' },
   { label: 'Email Accounts', href: '/Emailaccount' },
   { label: 'Email Signature', href: '#' },
-  { label: 'Mailbox', href: '#' },
+  { label: 'Mailbox', href: '/Mailbox' },
   { label: 'User Settings', href: '#' },
   { label: 'Notifications', href: '/Notification' },
 ];
@@ -78,9 +77,7 @@ function SettingForm() {
       </aside>
       <div className="p-4 sm:ml-64">
          <Setting /> 
-        <Headings />
-        <Form />
-        <MailFiled /> 
+         <EmailAccounts/>
       </div>
     </div>
   );

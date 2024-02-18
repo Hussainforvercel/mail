@@ -1,13 +1,13 @@
-"use client"
 import React, { useRef, useState } from 'react';
+import Link from 'next/link';
 
 function Setting() {
   const menuItems = [
-    { label: 'Mailbox', icon: 'home.png' },
-    { label: 'Campaign', icon: 'group.png' },
-    { label: 'Templates', icon: 'group2.png' },
-    { label: 'Settings', icon: 'group3.png' },
-    { label: 'Automation', icon: 'group4.png' },
+    { label: 'Mailbox', icon: 'home.png', path: '/mailbox' },
+    { label: 'Campaign', icon: 'group.png', path: '/campaign' },
+    { label: 'Templates', icon: 'group2.png', path: '/templates' },
+    { label: 'Settings', icon: 'group3.png', path: '/setting' },
+    { label: 'Automation', icon: 'group4.png', path: '/automation' },
   ];
 
   const containerRef = useRef(null);
@@ -44,17 +44,17 @@ function Setting() {
         <ul className="flex space-x-4">
           {menuItems.map((item, index) => (
             <li key={index} className="flex items-center">
-              <a
-                href="#"
-                className="text-gray-600 font-medium hover:text-gray-800 border-r border-gray-300 pr-4 flex items-center"
-              >
-                <img
-                  src={item.icon}
-                  alt={`${item.label} Icon`}
-                  className="mr-2 h-4 w-4 object-cover"
-                />
-                {item.label}
-              </a>
+              {/* Use Link component without the 'as' prop */}
+              <Link href={item.path}>
+                <div className="text-gray-600 font-medium hover:text-gray-800 border-r border-gray-300 pr-4 flex items-center">
+                  <img
+                    src={item.icon}
+                    alt={`${item.label} Icon`}
+                    className="mr-2 h-4 w-4 object-cover"
+                  />
+                  {item.label}
+                </div>
+              </Link>
             </li>
           ))}
           {/* Second input after "Automation" without a border */}

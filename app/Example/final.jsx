@@ -2,9 +2,9 @@ import React from 'react';
 
 function Form() {
   return (
-    <div className='p-4 md:p-8'>
+    <div className='p-4 md:px-8'>
 
-      <div className='mb-6 md:mb-10'>
+      <div className='mb-6 md:mb-4'>
         <h1 className="text-xl mb-2">From</h1>
         <select className='w-full p-3 bg-white border-2 border-gray-400 rounded' name="" id="">
           <option value="">Simone Plessis simonedpls@gmail.com</option>
@@ -15,7 +15,7 @@ function Form() {
 
       <div className="flex flex-col md:flex-row md:justify-between">
         <div className="mb-6 md:mb-0 md:mr-4">
-          <h1 className="text-xl mb-2">Campaign</h1>
+          <h1 className=" mb-2">Campaign</h1>
           <select className='w-full md:w-96 p-3 bg-white border-2 border-gray-400 rounded' name="" id="">
             <option value="">Search for a Campaign</option>
             <option value="">Search for a Campaign</option>
@@ -24,7 +24,7 @@ function Form() {
         </div>
 
         <div className="mb-6 md:mb-0">
-          <h1 className="text-xl mb-2">Template</h1>
+          <h1 className="mb-2">Template</h1>
           <select className='w-full md:w-96 p-3 bg-white border-2 border-gray-400 rounded' name="" id="">
             <option value="">Search for a Campaign</option>
             <option value="">Search for a Campaign</option>
@@ -52,7 +52,7 @@ function Form() {
           </select>
         </div>
 </div>
-      <div className='w-full h-48 md:h-96 mb-6'>
+      <div className='w-full h-48 md:h-72 mb-2'>
         <textarea
           name=""
           id=""
@@ -63,7 +63,7 @@ function Form() {
         </textarea>
       </div>
 
-      <button className='w-full md:w-auto px-4 bg-blue-500 p-2 float-right text-white rounded'>
+      <button className='w-full md:w-auto px-4 bg-blue-500 p-1 md:mb-1 float-right text-white rounded'>
         Send
       </button>
     </div>

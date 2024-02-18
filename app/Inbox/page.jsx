@@ -2,7 +2,7 @@ import React from 'react';
 
 function Inbox() {
   return (
-    <div className="container mx-auto px-4 py-8 p-20">
+    <div className="container mx-auto px-4 py-7 p-20 w-1/2">
       {/* New Email heading */}
       <h1 className="text-2xl font-bold">New Email</h1>
 
